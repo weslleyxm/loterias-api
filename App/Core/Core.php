@@ -25,13 +25,13 @@
                 if (in_array($item, AVAILABLE))  
                 {
                     if(empty($contest)) 
-                        call_user_func(array(new $service, "latest"), $item);      
+                        call_user_func(array(new $service, "latest"), $item);       
                     else  
-                    {
-                        $method =  method_exists($service, $contest) ? $contest : "contest"; 
+                    {   
+                        $method =  method_exists($service, $contest) ? $contest : "contest";   
                         $parameters = method_exists($service, $contest) ? $item : $item . "/". $contest;  
  
-                        call_user_func(array(new $service, $method),  $parameters);     
+                        call_user_func(array(new $service, $method),  $parameters);  
                     }
                 }
                 else 
